@@ -19,14 +19,12 @@ const postsSchema = new mongoose.Schema({
   ],
   comments: [
     {
-      Comment: {
-        usercommented: {
-          type: mongoose.Types.ObjectId,
-          ref: "users",
-        },
-        commentofuser: {
-          type: String,
-        },
+      usercommented: {
+        type: mongoose.Types.ObjectId,
+        ref: "users",
+      },
+      commentofuser: {
+        type: String,
       },
     },
   ],

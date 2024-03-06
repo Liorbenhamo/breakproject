@@ -32,3 +32,9 @@ export const updateuser = async (newdata) => {
 export const postcreate = async (postdata) => {
   return axios.post("http://localhost:3000/posts/add", postdata);
 };
+export const allposts = async () => {
+  return axios.get("http://localhost:3000/posts");
+};
+export const addcomment = async (comment) => {
+  return axios.post("http://localhost:3000/posts/addcomment", comment);
+};

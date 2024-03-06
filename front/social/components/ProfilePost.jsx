@@ -17,7 +17,7 @@ export default function ProfilePost({ useronline }) {
             </span>
           </div>
           <div>
-            <span className="ml-4">{post.posttext}</span>
+            <span className="dark:text-white ml-4">{post.posttext}</span>
             <div className="flex flex-col items-center">
               {post.imgurl && (
                 <img className="p-4 w-1/2" src={post.imgurl} alt="postimg" />

@@ -27,10 +27,32 @@ exports.addpost = async (req, res) => {
 };
 exports.takeposts = async (req, res) => {
   try {
-    let data = await Post.find().populate("usercreated");
+    let data = await Post.find()
+      .populate("usercreated")
+      .populate([
+        {
+          path: "comments",
+          populate: {
+            path: "usercommented",
+            model: "users",
+          },
+        },
+      ]);
+    console.log("data");
     console.log(data);
     return res.status(200).json(data);
   } catch (err) {
+    res.status(500).json(err.message);
+  }
+};
+exports.addcomment = async (req, res) => {
+  try {
+    const newcomment = { comments: req.body.comments };
+    let doc = await Post.findOneAndUpdate({ _id: req.body.id }, newcomment, {
+      new: true,
+    });
+    return res.status(200).json(doc);
+  } catch {
     res.status(500).json(err.message);
   }
 };
