@@ -90,6 +90,19 @@ exports.takeusers = async (req, res) => {
     res.status(500).json(err.message);
   }
 };
+exports.takeuser = async (req, res) => {
+  console.log("hi");
+  try {
+    console.log(req.params);
+
+    const oneUser = await User.findOne({ _id: req.params.id });
+    console.log(oneUser);
+    console.log("i am user profile");
+    return res.status(200).json(oneUser);
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
+};
 exports.update = async (req, res) => {
   console.log(req.body);
   try {

@@ -9,6 +9,7 @@ import UserDetails from "../pages/UserDetails";
 import PostPage from "../pages/PostPage";
 import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
+import UserProfile from "../pages/UserProfile";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="messeges" element={<MessegesPage />} />
           <Route path="profile" element={<ProfilePage />} />
+          <Route path="userprofile/:id" element={<UserProfile />} />
           <Route path="userdatails" element={<UserDetails />} />
           <Route path="post" element={<PostPage />} />
         </Route>

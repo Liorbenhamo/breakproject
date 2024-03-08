@@ -42,3 +42,7 @@ export const addlike = async (likes) => {
   console.log(likes);
   return axios.post("http://localhost:3000/posts/addlike", likes);
 };
+export const takeuser = async (id) => {
+  console.log(id);
+  return axios.get(`http://localhost:3000/users/takeuser/${id}`, id);
+};
