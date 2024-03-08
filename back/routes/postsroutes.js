@@ -4,6 +4,7 @@ const postscontroller = require("../controllers/postscontrollers");
 
 router.route("/add").post(postscontroller.addpost);
 router.route("/addcomment").post(postscontroller.addcomment);
+router.route("/addlike").post(postscontroller.addlike);
 router.route("/").get(postscontroller.takeposts);
 
 module.exports = router;
