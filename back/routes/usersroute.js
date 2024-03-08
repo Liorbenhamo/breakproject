@@ -7,5 +7,6 @@ router.route("/login").post(userscontroller.login);
 router.route("/logout").get(userscontroller.logout);
 router.route("/").get(userscontroller.takeusers);
 router.route("/edit").patch(userscontroller.update);
+router.route("/takeuser/:id").get(userscontroller.takeuser);
 
 module.exports = router;

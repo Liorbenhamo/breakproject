@@ -51,6 +51,22 @@ exports.addcomment = async (req, res) => {
     let doc = await Post.findOneAndUpdate({ _id: req.body.id }, newcomment, {
       new: true,
     });
+    console.log(doc);
+    return res.status(200).json(doc);
+  } catch {
+    res.status(500).json(err.message);
+  }
+};
+exports.addlike = async (req, res) => {
+  try {
+    console.log(req.body);
+    console.log("liorbenhamo");
+    const newcomment = { likes: req.body.likes };
+    let doc = await Post.findOneAndUpdate({ _id: req.body.id }, newcomment, {
+      new: true,
+    });
+    console.log("hi");
+    console.log(doc);
     return res.status(200).json(doc);
   } catch {
     res.status(500).json(err.message);
